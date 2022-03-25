@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed = 2;
-    [SerializeField] private AudioClip hurtSFX;
+    //[SerializeField] private AudioClip hurtSFX;
 
     public Vector2 moveDirect;
     public Vector2 player;
@@ -51,8 +51,8 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
         }
         Destroy(gameObject);
-        AudioSource audio = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
-        audio.PlayOneShot(hurtSFX, 0.5f);
+        //AudioSource audio = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+        //audio.PlayOneShot(hurtSFX, 0.5f);
     }
 
     public void DeleteEnemy ()
