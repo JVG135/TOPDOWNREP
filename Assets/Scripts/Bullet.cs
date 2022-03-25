@@ -5,17 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public Vector2 direction;
-    public float speed = 10f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //public float speed = 10f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        //transform.Translate(direction * speed * Time.deltaTime);
+        Destroy(gameObject,2f);
     }
 
     private void OnCollisionEnter2D(Collision2D c)
