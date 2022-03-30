@@ -38,14 +38,6 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-
-            moverotation p = GameObject.FindGameObjectWithTag("Player").GetComponent<moverotation>();
-            p.score += 100;
-            //animatorController.SetTrigger("Death");
-            GetComponent<Collider2D>().enabled = false;
-        }
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
