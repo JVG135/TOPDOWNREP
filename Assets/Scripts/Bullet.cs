@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject ach;
+    //public GameObject[] UI;
     public Vector2 direction;
     //public float speed = 10f;
 
@@ -28,8 +29,8 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            ach.SetActive(true);
-            Destroy(ach.gameObject, 5f);
+            //UI = GameObject.FindGameObjectsWithTag("UI");
+           // UI.SetActive(true);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
