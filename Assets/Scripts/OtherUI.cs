@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class OtherUI : MonoBehaviour
 {
-    public Transform target;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject target;
+    public GameObject ach2;
 
-    // Update is called once per frame
-    void Update()
+    public void kill()
     {
-        
+        if (ach2 != null)//check if achievement still exists to be active, otherwise do nothing
+        {
+            ach2.SetActive(true);
+            Destroy(ach2.gameObject, 5f);
+        }
     }
 }

@@ -10,12 +10,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lifeText;
     public GameObject endpan;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
             if (health <= 0)
             {
                 lifeText.text = " DEAD";
-                endpan.SetActive(true);
+                endpan.SetActive(true);//activate gameover panel
                 Destroy(gameObject);
             }
         }

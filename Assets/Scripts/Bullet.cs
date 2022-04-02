@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject ach;
     public Vector2 direction;
-    //public float speed = 10f;
 
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(direction * speed * Time.deltaTime);
         Destroy(gameObject,2f);
     }
 
@@ -19,6 +16,8 @@ public class Bullet : MonoBehaviour
     {
         if (c.gameObject.tag == "Enemy")
         {
+            OtherUI a = GameObject.Find("achievement2control").GetComponent<OtherUI>();
+            a.kill();
             Destroy(c.gameObject);
             Destroy(gameObject);
         }
@@ -28,8 +27,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            ach.SetActive(true);
-            Destroy(ach.gameObject, 5f);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
