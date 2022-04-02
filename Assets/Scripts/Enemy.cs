@@ -5,17 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed = 2;
-    //[SerializeField] private AudioClip hurtSFX;
 
     public Vector2 moveDirect;
     public Vector2 player;
     public Transform target;
     Rigidbody2D rb;
-    //Animator animatorController;
     // Start is called before the first frame update
     void Start()
     {
-        //animatorController = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").GetComponent<Transform>();
         player = target.position;
         Vector2 direction = target.position - transform.position;
@@ -30,12 +27,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -43,8 +34,6 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
         }
         Destroy(gameObject);
-        //AudioSource audio = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
-        //audio.PlayOneShot(hurtSFX, 0.5f);
     }
 
     public void DeleteEnemy ()

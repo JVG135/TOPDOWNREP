@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //public GameObject[] UI;
     public Vector2 direction;
-    //public float speed = 10f;
 
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(direction * speed * Time.deltaTime);
         Destroy(gameObject,2f);
     }
 
@@ -23,8 +20,6 @@ public class Bullet : MonoBehaviour
             a.kill();
             Destroy(c.gameObject);
             Destroy(gameObject);
-           // a.ach2.SetActive(true);
-           // Destroy(a.ach2, 5f);
         }
     }
 
@@ -32,8 +27,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            //UI = GameObject.FindGameObjectsWithTag("UI");
-            // UI.SetActive(true);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
