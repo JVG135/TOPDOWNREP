@@ -39,28 +39,28 @@ public class Spawnercontroll : MonoBehaviour
         maxY = topCorner.y;
 
         //randomizes spawn between all edges of screen
-        spawnSide = Random.Range(0, 4);
-        if (spawnSide == 0)
+        spawnSide = Random.Range(0, 4);//ROLL WHICH SIDE TO SPAWN
+        if (spawnSide == 0)//LEFT
         {
             Instantiate(enemyPrefab, new Vector3(minX - 1, Random.Range(minY, maxY), 0f), Quaternion.identity);
             spawnSide = Random.Range(0, 4);
         }
-        else if (spawnSide == 1)
+        else if (spawnSide == 1)//RIGHT
         {
             Instantiate(enemyPrefab, new Vector3(maxX + 1, Random.Range(minY, maxY), 0f), Quaternion.identity);
             spawnSide = Random.Range(0, 4);
         }
-        else if (spawnSide == 2)
+        else if (spawnSide == 2)//UP
         {
             Instantiate(enemyPrefab, new Vector3(Random.Range(minX, maxX), maxY + 1, 0f), Quaternion.identity);
             spawnSide = Random.Range(0, 4);
         }
-        else if (spawnSide == 3)
+        else if (spawnSide == 3)//DOWN
         {
             Instantiate(enemyPrefab, new Vector3(Random.Range(minX, maxX), minY - 1, 0f), Quaternion.identity);
             spawnSide = Random.Range(0, 4);
         }
 
-        Destroy(enemyPrefab, 15f);
+        Destroy(enemyPrefab, 15f);//DESTROY AFTER SET TIME IN CASE ENEMY LIVES TOO LONG
     }
 }
